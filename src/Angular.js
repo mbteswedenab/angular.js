@@ -999,6 +999,11 @@ function copy(source, destination, maxDepth) {
         return new source.constructor(source.valueOf());
 
       case '[object RegExp]':
+         // fix to prevent ReDos for angular copy for regexes more than 2048 symbols CVE-2023-26116 https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373044
+         if(source.source.toString().length > 2048){
+          console.error('Souce string is too long...')
+          return;
+        }
         var re = new RegExp(source.source, source.toString().match(/[^/]*$/)[0]);
         re.lastIndex = source.lastIndex;
         return re;
