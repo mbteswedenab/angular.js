@@ -1000,7 +1000,7 @@ function copy(source, destination, maxDepth) {
 
       case '[object RegExp]':
          // fix to prevent ReDos for angular copy for regexes more than 2048 symbols CVE-2023-26116 https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373044
-         if(source.source.toString().length > 2048){
+        if(source.source.toString().length > 2048){
           console.error('Souce string is too long...')
           return;
         }
