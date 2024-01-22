@@ -606,7 +606,11 @@ angular.module('ngResource', ['ng']).
             val,
             encodedVal,
             protocolAndIpv6 = '';
-
+          var repeatingCharsRegex = /(.)\1{500}/; //Check repeating symbols more than 500 times 
+          if (repeatingCharsRegex.test(url)) {
+            console.error('Repeating characters in the URL. Possible ReDoS attack.');
+            return;
+          }
           var urlParams = self.urlParams = Object.create(null);
           forEach(url.split(/\W/), function(param) {
             if (param === 'hasOwnProperty') {
