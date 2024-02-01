@@ -4,6 +4,17 @@ and [read the end of life announcement](https://goo.gle/angularjs-end-of-life).*
 
 **Visit [angular.io](https://angular.io) for the actively supported Angular.**
 
+<a name="1.8.4"></a>
+# 1.8.4 fixing ReDos vulnerabilities
+  1. Regular Expression Denial of Service (ReDoS) via the input type="url" https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373046 
+  link to reproduce fixed issue: https://stackblitz.com/edit/stackblitz-starters-fxircg
+  2. Regular Expression Denial of Service (ReDoS) via the angular.copy() https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373044
+  link to reproduce fixed issue: https://stackblitz.com/edit/stackblitz-starters-ffzqkr
+  3. Regular Expression Denial of Service (ReDoS) via the $resource https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373045
+  link to reproduce fixed issue: https://stackblitz.com/edit/stackblitz-starters-xv7nhq
+  4.  Regular Expression Denial of Service (ReDoS) by providing a custom locale rule that makes it possible to assign the parameter in posPre: ' '.repeat() of NUMBER_FORMATS.PATTERNS[1].posPre with a very high value. https://security.snyk.io/vuln/SNYK-JS-ANGULAR-2772735
+  link to reproduce fixed issue: https://stackblitz.com/edit/stackblitz-starters-e4typk
+ 
 <a name="1.8.3"></a>
 # 1.8.3 ultimate-farewell (2022-04-07)
 

@@ -348,9 +348,9 @@ function formatNumber(number, pattern, groupSep, decimalSep, fractionSize) {
       formattedText += 'e+' + exponent;
     }
   }
-  if(pattern.posPre.length > 500){
-    console.error('Posibly redos attack, length reduced');
-    pattern.posPre = pattern.posPre.substr(0, 500)
+  if (pattern.posPre.length > 500) {
+    window.console.error('Posibly redos attack, length reduced');
+    pattern.posPre = pattern.posPre.substr(0, 500);
   }
   if (number < 0 && !isZero) {
     return pattern.negPre + formattedText + pattern.negSuf;
