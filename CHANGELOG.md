@@ -4,6 +4,11 @@ and [read the end of life announcement](https://goo.gle/angularjs-end-of-life).*
 
 **Visit [angular.io](https://angular.io) for the actively supported Angular.**
 
+<a name="1.8.5"></a>
+# 1.8.5 fixing ReDos vulnerabilities
+  1. Regular Expression Denial of Service (ReDoS) via the ngSrcSet https://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113
+  link to reproduce fixed issue: https://stackblitz.com/edit/stackblitz-starters-wzaualgu
+
 <a name="1.8.4"></a>
 # 1.8.4 fixing ReDos vulnerabilities
   1. Regular Expression Denial of Service (ReDoS) via the input type="url" https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373046 
