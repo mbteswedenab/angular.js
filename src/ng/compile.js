@@ -2097,7 +2097,9 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       var result = '';
 
       // first check if there are spaces because it's not the same pattern
-      var trimmedSrcset = trim(value);
+      // fix CVE-2024-21490
+      var trimmedSrcset = isString(value) ? value.replace(/\s+/g, ' ').trim() : value;
+      trimmedSrcset = trim(trimmedSrcset);
       //                (   999x   ,|   999w   ,|   ,|,   )
       var srcPattern = /(\s+\d+x\s*,|\s+\d+w\s*,|\s+,|,\s+)/;
       var pattern = /\s/.test(trimmedSrcset) ? srcPattern : /(,)/;
